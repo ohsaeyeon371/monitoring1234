@@ -17,7 +17,7 @@ export default function Navbar() {
         <NavLink to="/monitoring" style={linkStyle}>모니터링</NavLink>
         <NavLink to="/sensors"    style={linkStyle}>센서정보</NavLink>
         <NavLink to="/analytics"  style={linkStyle}>데이터분석</NavLink>
-        <NavLink to="/zones"      style={linkStyle}>센서관리</NavLink>
+        <NavLink to="/zones"      style={linkStyle}>구역</NavLink>
         <NavLink to="/settings"   style={linkStyle}>설정</NavLink>
       </nav>
     </header>
