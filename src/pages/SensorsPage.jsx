@@ -12,8 +12,7 @@ export default function SensorsPage() {
 
   const baseHost = import.meta.env.VITE_API_BASE ?? "http://localhost:3000";
   // const DEV_TOKEN = (import.meta.env.VITE_DEV_TOKEN || "").trim() || null;
-  const DEV_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiY29tcGFueV9pZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyNzg2MDcyLCJleHAiOjE3NjI3ODY5NzJ9._f27h5eMTQMEFlxdIdftq11cQ9CWypkpgYcZamKB7fk"
- 
+  const DEV_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiY29tcGFueV9pZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyNzg5NTYwLCJleHAiOjE3NjI3OTA0NjB9.ZZOblpWvEuW-tupCP_MRRfvl-sttCjH4bpS2j4WPXK8"
 
   const url = useMemo(() => {
     const qs = new URLSearchParams({
