@@ -36,9 +36,73 @@
 // }
 
 
+
+
+
+
+
+// import React from "react";
+
+// export default function SensorCard({ item, onClick, onDelete, editMode = false }) {
+//   const isAlert = !!item.alert;
+
+//   return (
+//     <div
+//       onClick={onClick}
+//       style={{
+//         width: 160,
+//         height: 144,
+//         borderRadius: 8,
+//         background: "#fff",
+//         border: isAlert ? "2px solid #ef4444" : "1px solid #e5e7eb",
+//         display: "flex",
+//         alignItems: "center",
+//         justifyContent: "center",
+//         position: "relative",
+//         cursor: "pointer",
+//         boxShadow: isAlert ? "0 0 0 3px rgba(239,68,68,0.15)" : "none",
+//       }}
+//       title={`${item.name} — ${item.temp}℃ / ${item.hum}%`}
+//     >
+//       {/* 삭제 버튼 (편집모드일 때만 노출) */}
+//       {editMode && (
+//         <button
+//           onClick={(e) => {
+//             e.stopPropagation();
+//             onDelete?.();
+//           }}
+//           title="타일 삭제"
+//           style={{
+//             position: "absolute",
+//             right: 8,
+//             top: 8,
+//             width: 26,
+//             height: 26,
+//             borderRadius: 999,
+//             border: "1px solid #e5e7eb",
+//             background: "#fff",
+//             fontSize: 16,
+//             lineHeight: "24px",
+//             cursor: "pointer",
+//           }}
+//         >
+//           ×
+//         </button>
+//       )}
+
+//       <div style={{ textAlign: "center", lineHeight: 1.6 }}>
+//         <div style={{ fontSize: 18, fontWeight: isAlert ? 800 : 600 }}>{item.temp}°C</div>
+//         <div style={{ fontSize: 18, fontWeight: isAlert ? 800 : 600 }}>{item.hum}%</div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
 import React from "react";
 
-export default function SensorCard({ item, onClick, onDelete, editMode = false }) {
+export default function SensorCard({ item, locked = false, onClick }) {
   const isAlert = !!item.alert;
 
   return (
@@ -54,35 +118,33 @@ export default function SensorCard({ item, onClick, onDelete, editMode = false }
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
-        cursor: "pointer",
+        cursor: onClick ? "pointer" : "default",
         boxShadow: isAlert ? "0 0 0 3px rgba(239,68,68,0.15)" : "none",
       }}
       title={`${item.name} — ${item.temp}℃ / ${item.hum}%`}
     >
-      {/* 삭제 버튼 (편집모드일 때만 노출) */}
-      {editMode && (
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            onDelete?.();
-          }}
-          title="타일 삭제"
+      {/* 기본 타일은 잠금 아이콘으로 표시(편집 불가) */}
+      {locked && (
+        <div
+          title="기본 타일 (편집 불가)"
           style={{
             position: "absolute",
             right: 8,
             top: 8,
-            width: 26,
-            height: 26,
+            width: 22,
+            height: 22,
             borderRadius: 999,
             border: "1px solid #e5e7eb",
-            background: "#fff",
-            fontSize: 16,
-            lineHeight: "24px",
-            cursor: "pointer",
+            background: "#f8fafc",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 12,
+            color: "#64748b",
           }}
         >
-          ×
-        </button>
+          🔒
+        </div>
       )}
 
       <div style={{ textAlign: "center", lineHeight: 1.6 }}>
