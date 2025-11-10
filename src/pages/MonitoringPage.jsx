@@ -22,7 +22,7 @@ export default function MonitoringPage() {
     return `${baseHost}/api/v1/sensors?${params.toString()}`;
   }, [baseHost, page, size]);
   
-  const DEV_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiY29tcGFueV9pZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyNzkwNDgwLCJleHAiOjE3NjI3OTIyODB9.zY-KGo7QrbX3mrhtYzgUowLO5yHSHPoMYALE54ZrqIs"
+  const DEV_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiY29tcGFueV9pZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyNzkxOTQwLCJleHAiOjE3NjI3OTM3NDB9.uZU3OL6_NB_2QMwgi-DnPlVyBhzy2A6D4_leyXmB9hY"
   
   async function fetchSensors() {
     setLoading(true);
